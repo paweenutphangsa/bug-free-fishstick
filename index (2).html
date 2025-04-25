@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>เอ้ากดเข้ามาทำไม</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .button {
+      padding: 20px 40px;
+      font-size: 20px;
+      background-color: #ff6347;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+
+    .response {
+      font-size: 24px;
+      color: #d2691e;
+      display: none;
+      margin-top: 30px;
+      font-weight: bold;
+    }
+
+    .laugh-image {
+      width: 200px;
+      height: 200px;
+      margin-top: 30px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="button" id="clickButton">เอ้ากดเข้ามาทำไม</button>
+  <div class="response" id="responseText">กดเข้ามาทำไม? คิดว่าจะเจออะไรดีเหรอ? 😂</div>
+  <img src="https://media.giphy.com/media/3o7aD2saal5v9WhYkI/giphy.gif" alt="หัวเราะ" class="laugh-image" id="laughImage">
+
+  <script>
+    const button = document.getElementById('clickButton');
+    const responseText = document.getElementById('responseText');
+    const laughImage = document.getElementById('laughImage');
+
+    button.addEventListener('click', () => {
+      responseText.style.display = 'block';  // แสดงข้อความ
+      laughImage.style.display = 'block';  // แสดงรูปหัวเราะ
+      button.disabled = true;  // ปิดปุ่มหลังจากกดแล้ว
+      button.innerHTML = "เอ้ากดแล้วก็อย่ากดต่อสิ!"; // เปลี่ยนข้อความปุ่ม
+    });
+  </script>
+
+</body>
+</html>
+
